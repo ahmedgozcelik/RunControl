@@ -366,6 +366,8 @@
 "Assets/Scripts/Kamera.cs"
 "Assets/Scripts/Karakter.cs"
 "Assets/Scripts/Kutuphane.cs"
+"Assets/Scripts/Pervane.cs"
+"Assets/Scripts/Ruzgar.cs"
 -langversion:9.0
 
 /deterministic

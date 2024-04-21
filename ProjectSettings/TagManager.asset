@@ -11,6 +11,8 @@ TagManager:
   - Toplama
   - Cikarma
   - Testere
+  - PervaneIgneler
+  - AltKarakter
   layers:
   - Default
   - TransparentFX

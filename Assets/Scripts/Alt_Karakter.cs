@@ -32,5 +32,11 @@ public class Alt_Karakter : MonoBehaviour
             GameObject.FindWithTag("GameManager").GetComponent<GameManager>().YokOlmaEfektiOlustur(yeniPoz);
             gameObject.SetActive(false);
         }
+        else if (other.CompareTag("PervaneIgneler"))
+        {
+            Vector3 yeniPoz = new Vector3(transform.position.x, .23f, transform.position.z);
+            GameObject.FindWithTag("GameManager").GetComponent<GameManager>().YokOlmaEfektiOlustur(yeniPoz);
+            gameObject.SetActive(false);
+        }
     }
 }
