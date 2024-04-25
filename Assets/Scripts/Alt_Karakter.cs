@@ -20,7 +20,7 @@ public class Alt_Karakter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("igneliKutu"))
+        if (other.CompareTag("IgneliKutu"))
         {
             Vector3 yeniPoz = new Vector3(transform.position.x, .23f, transform.position.z);
             GameObject.FindWithTag("GameManager").GetComponent<GameManager>().YokOlmaEfektiOlustur(yeniPoz);
@@ -36,6 +36,13 @@ public class Alt_Karakter : MonoBehaviour
         {
             Vector3 yeniPoz = new Vector3(transform.position.x, .23f, transform.position.z);
             GameObject.FindWithTag("GameManager").GetComponent<GameManager>().YokOlmaEfektiOlustur(yeniPoz);
+            gameObject.SetActive(false);
+        }
+        else if (other.CompareTag("Balyoz"))
+        {
+            Vector3 yeniPoz = new Vector3(transform.position.x, .005f, transform.position.z);
+            GameObject.FindWithTag("GameManager").GetComponent<GameManager>().YokOlmaEfektiOlustur(yeniPoz);
+            GameObject.FindWithTag("GameManager").GetComponent<GameManager>().AdamLekesiOlustur(yeniPoz);
             gameObject.SetActive(false);
         }
     }

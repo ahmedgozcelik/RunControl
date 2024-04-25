@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> Karakterler;
     public List<GameObject> OlusmaEfektleri;
     public List<GameObject> YokOlmaEfektleri;
+    public List<GameObject> AdamLekesiEfektleri;
     void Start()
     {
         
@@ -18,6 +19,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+
+
         //if (Input.GetKeyDown(KeyCode.A))
         //{
         //    //OBJECT POOL
@@ -63,6 +66,19 @@ public class GameManager : MonoBehaviour
                 item.transform.position = Pozisyon;
                 item.GetComponent<ParticleSystem>().Play();
                 AnlikKarakterSayisi--;
+                break;
+            }
+        }
+    }
+
+    public void AdamLekesiOlustur(Vector3 Pozisyon)
+    {
+        foreach (var item in AdamLekesiEfektleri)
+        {
+            if (!item.activeInHierarchy)
+            {
+                item.SetActive(true);
+                item.transform.position = Pozisyon;
                 break;
             }
         }

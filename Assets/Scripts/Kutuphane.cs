@@ -40,8 +40,8 @@ namespace Gurkan
                     sayi = 0;
                     break;
                 }
-                GameManager.AnlikKarakterSayisi *= GelenSayi;
             }
+            GameManager.AnlikKarakterSayisi *= GelenSayi;
         }
 
         public static void Toplama(int GelenSayi, List<GameObject> Karakterler, Transform Pozisyon, List<GameObject> OlusmaEfektleri)
@@ -67,6 +67,7 @@ namespace Gurkan
 
                         item.transform.position = Pozisyon.position;
                         item.SetActive(true);
+                        Debug.Log("aaaa");
                         sayi2++;
                     }
                 }
@@ -75,15 +76,15 @@ namespace Gurkan
                     sayi2 = 0;
                     break;
                 }
-                GameManager.AnlikKarakterSayisi += GelenSayi;
             }
+            GameManager.AnlikKarakterSayisi += GelenSayi;
         }
 
         public static void Cikarma(int GelenSayi, List<GameObject> Karakterler, List<GameObject> YokOlmaEfektleri)
         {
-            if(GameManager.AnlikKarakterSayisi < GelenSayi)
+            if (GameManager.AnlikKarakterSayisi < GelenSayi)
             {
-                foreach(var item in Karakterler)
+                foreach (var item in Karakterler)
                 {
                     foreach (var item2 in YokOlmaEfektleri)
                     {
@@ -105,9 +106,9 @@ namespace Gurkan
             else
             {
                 int sayi3 = 0;
-                foreach(var item in Karakterler)
+                foreach (var item in Karakterler)
                 {
-                    if(sayi3 !=  GelenSayi)
+                    if (sayi3 != GelenSayi)
                     {
                         if (item.activeInHierarchy)
                         {
@@ -140,7 +141,7 @@ namespace Gurkan
         //Bölmede hata var daha sonra kontrol et ve gider.
         public static void Bolme(int GelenSayi, List<GameObject> Karakterler, List<GameObject> YokOlmaEfektleri)
         {
-            if(GameManager.AnlikKarakterSayisi <= GelenSayi)
+            if (GameManager.AnlikKarakterSayisi <= GelenSayi)
             {
                 foreach (var item in Karakterler)
                 {
@@ -162,13 +163,13 @@ namespace Gurkan
                 GameManager.AnlikKarakterSayisi = 1;
             }
             else
-            { 
+            {
                 int bolen = GameManager.AnlikKarakterSayisi / GelenSayi;
                 int sayi4 = 0;
 
-                foreach(var item in Karakterler)
+                foreach (var item in Karakterler)
                 {
-                    if(sayi4 != bolen)
+                    if (sayi4 != bolen)
                     {
                         if (item.activeInHierarchy)
                         {
@@ -196,11 +197,11 @@ namespace Gurkan
                     }
                 }
 
-                if(GameManager.AnlikKarakterSayisi % GelenSayi == 0)
+                if (GameManager.AnlikKarakterSayisi % GelenSayi == 0)
                 {
                     GameManager.AnlikKarakterSayisi /= GelenSayi;
                 }
-                else if(GameManager.AnlikKarakterSayisi % GelenSayi == 1)
+                else if (GameManager.AnlikKarakterSayisi % GelenSayi == 1)
                 {
                     GameManager.AnlikKarakterSayisi /= GelenSayi;
                     GameManager.AnlikKarakterSayisi++;
