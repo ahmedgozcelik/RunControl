@@ -67,7 +67,6 @@ namespace Gurkan
 
                         item.transform.position = Pozisyon.position;
                         item.SetActive(true);
-                        Debug.Log("aaaa");
                         sayi2++;
                     }
                 }
