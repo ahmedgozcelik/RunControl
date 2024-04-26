@@ -5,7 +5,7 @@ using UnityEngine;
 public class Karakter : MonoBehaviour
 {
     public GameManager _GameManager;
-    public GameObject _Kamera;
+    public Kamera _Kamera;
     public GameObject KarakterYeniPoz;
 
     public bool SonaGelindiMiKarakter;
@@ -48,7 +48,7 @@ public class Karakter : MonoBehaviour
         }
         else if (other.CompareTag("SonTetikleyici")) // Oyun sonu için trigger koyduðum nokta
         {
-            _Kamera.GetComponent<Kamera>().SonaGelindiMiKamera = true;
+            _Kamera.SonaGelindiMiKamera = true;
             _GameManager.DusmanlariTetikle();
             SonaGelindiMiKarakter = true;
         }
