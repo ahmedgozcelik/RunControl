@@ -16,6 +16,8 @@ TagManager:
   - IgneliKutu
   - Dusman
   - SonTetikleyici
+  - Kapi
+  - Karakter
   layers:
   - Default
   - TransparentFX

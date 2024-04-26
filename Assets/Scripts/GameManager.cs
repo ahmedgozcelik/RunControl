@@ -45,25 +45,26 @@ public class GameManager : MonoBehaviour
         //}
     }
 
-    public void AdamYonetimi(string islemTuru, int GelenSayi, Transform Pozisyon)
-    {
-        switch (islemTuru)
-        {
-            case "Carpma":
-                Matematiksel_Islemler.Carpma(GelenSayi, Karakterler, Pozisyon, OlusmaEfektleri);
-                break;
-            case "Toplama":
-                Matematiksel_Islemler.Toplama(GelenSayi, Karakterler, Pozisyon, OlusmaEfektleri);
-                break;
-            case "Cikarma":
-                Matematiksel_Islemler.Cikarma(GelenSayi, Karakterler, YokOlmaEfektleri);
-                break;
-            case "Bolme":
-                Matematiksel_Islemler.Bolme(GelenSayi, Karakterler, YokOlmaEfektleri);
-                break;
-        }
-    }
+    //public void AdamYonetimi(string islemTuru, int GelenSayi, Transform Pozisyon)
+    //{
+    //    switch (islemTuru)
+    //    {
+    //        case "Carpma":
+    //            Matematiksel_Islemler.Carpma(GelenSayi, Karakterler, Pozisyon, OlusmaEfektleri);
+    //            break;
+    //        case "Toplama":
+    //            Matematiksel_Islemler.Toplama(GelenSayi, Karakterler, Pozisyon, OlusmaEfektleri);
+    //            break;
+    //        case "Cikarma":
+    //            Matematiksel_Islemler.Cikarma(GelenSayi, Karakterler, YokOlmaEfektleri);
+    //            break;
+    //        case "Bolme":
+    //            Matematiksel_Islemler.Bolme(GelenSayi, Karakterler, YokOlmaEfektleri);
+    //            break;
+    //    }
+    //}
 
+    
     public void SavasDurumu()
     {
         if(AnlikKarakterSayisi == 1 || DusmanSayisi == 0) //Karakter sayýmýzýn durumuna göre kaybetme veya düþman sayýsýna göre kazanma durumlarýný kontrol et

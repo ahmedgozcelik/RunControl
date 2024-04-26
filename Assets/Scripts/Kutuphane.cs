@@ -42,6 +42,7 @@ namespace Gurkan
                 }
             }
             GameManager.AnlikKarakterSayisi *= GelenSayi;
+            Debug.Log(GameManager.AnlikKarakterSayisi);
         }
 
         public static void Toplama(int GelenSayi, List<GameObject> Karakterler, Transform Pozisyon, List<GameObject> OlusmaEfektleri)
@@ -77,6 +78,7 @@ namespace Gurkan
                 }
             }
             GameManager.AnlikKarakterSayisi += GelenSayi;
+            Debug.Log(GameManager.AnlikKarakterSayisi);
         }
 
         public static void Cikarma(int GelenSayi, List<GameObject> Karakterler, List<GameObject> YokOlmaEfektleri)
@@ -137,7 +139,7 @@ namespace Gurkan
                 GameManager.AnlikKarakterSayisi -= GelenSayi;
             }
         }
-        //Bölmede hata var daha sonra kontrol et ve gider.
+        //BÖLME HATALI
         public static void Bolme(int GelenSayi, List<GameObject> Karakterler, List<GameObject> YokOlmaEfektleri)
         {
             if (GameManager.AnlikKarakterSayisi <= GelenSayi)
@@ -210,6 +212,8 @@ namespace Gurkan
                     GameManager.AnlikKarakterSayisi /= GelenSayi;
                     GameManager.AnlikKarakterSayisi += 2;
                 }
+
+                Debug.Log(GameManager.AnlikKarakterSayisi);
             }
         }
     }

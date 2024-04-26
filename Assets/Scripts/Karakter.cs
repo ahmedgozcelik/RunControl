@@ -41,12 +41,17 @@ public class Karakter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Carpma") || other.CompareTag("Toplama") || other.CompareTag("Cikarma") || other.CompareTag("Bolme"))
-        {
-            int sayi = int.Parse(other.name);
-            _GameManager.AdamYonetimi(other.tag, sayi, other.transform);
-        }
-        else if (other.CompareTag("SonTetikleyici")) // Oyun sonu için trigger koyduðum nokta
+        //if (other.CompareTag("Carpma") || other.CompareTag("Toplama") || other.CompareTag("Cikarma") || other.CompareTag("Bolme"))
+        //{
+        //    int sayi = int.Parse(other.name);
+        //    _GameManager.AdamYonetimi(other.tag, sayi, other.transform);
+        //}
+
+        //if (other.CompareTag("Kapi"))
+        //{
+        //    kapi.KapiTuruBelirle(other.transform);
+        //}
+        if (other.CompareTag("SonTetikleyici")) // Oyun sonu için trigger koyduðum nokta
         {
             _Kamera.SonaGelindiMiKamera = true;
             _GameManager.DusmanlariTetikle();

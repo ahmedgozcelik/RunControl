@@ -367,6 +367,7 @@
 "Assets/Scripts/Dusman.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/Kamera.cs"
+"Assets/Scripts/Kapi.cs"
 "Assets/Scripts/Karakter.cs"
 "Assets/Scripts/Kutuphane.cs"
 "Assets/Scripts/Pervane.cs"
