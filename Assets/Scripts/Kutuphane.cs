@@ -139,7 +139,7 @@ namespace Gurkan
                 GameManager.AnlikKarakterSayisi -= GelenSayi;
             }
         }
-        //BÖLME HATALI
+      
         public static void Bolme(int GelenSayi, List<GameObject> Karakterler, List<GameObject> YokOlmaEfektleri)
         {
             if (GameManager.AnlikKarakterSayisi <= GelenSayi)
@@ -170,7 +170,7 @@ namespace Gurkan
 
                 foreach (var item in Karakterler)
                 {
-                    if (sayi4 != bolen)
+                    if (sayi4 != GameManager.AnlikKarakterSayisi - bolen)
                     {
                         if (item.activeInHierarchy)
                         {
