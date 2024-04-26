@@ -45,5 +45,11 @@ public class Alt_Karakter : MonoBehaviour
             GameObject.FindWithTag("GameManager").GetComponent<GameManager>().AdamLekesiOlustur(yeniPoz);
             gameObject.SetActive(false);
         }
+        else if (other.CompareTag("Dusman"))
+        {
+            Vector3 yeniPoz = new Vector3(transform.position.x, .005f, transform.position.z);
+            GameObject.FindWithTag("GameManager").GetComponent<GameManager>().YokOlmaEfektiOlustur(yeniPoz, false);
+            gameObject.SetActive(false);
+        }
     }
 }

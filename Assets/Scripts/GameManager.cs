@@ -15,15 +15,16 @@ public class GameManager : MonoBehaviour
 
     [Header("Level Verileri")]
     public List<GameObject> Dusmanlar;
-
     public int DusmanSayisi;
+    public GameObject AnaKarakter;
+    public bool OyunBittiMi;
 
     void Start()
     {
-        DusmanlariOlustur();   
+        DusmanlariOlustur();
     }
 
-    
+
 
     void Update()
     {
@@ -47,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     public void AdamYonetimi(string islemTuru, int GelenSayi, Transform Pozisyon)
     {
-        switch(islemTuru)
+        switch (islemTuru)
         {
             case "Carpma":
                 Matematiksel_Islemler.Carpma(GelenSayi, Karakterler, Pozisyon, OlusmaEfektleri);
@@ -64,18 +65,62 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void YokOlmaEfektiOlustur(Vector3 Pozisyon)
+    public void SavasDurumu()
     {
-        foreach(var item in YokOlmaEfektleri)
+        if(AnlikKarakterSayisi == 1 || DusmanSayisi == 0) //Karakter sayýmýzýn durumuna göre kaybetme veya düþman sayýsýna göre kazanma durumlarýný kontrol et
+        {
+            OyunBittiMi = true;
+            foreach (var item in Dusmanlar)
+            {
+                if (item.activeInHierarchy)
+                {
+                    item.GetComponent<Animator>().SetBool("Saldir", false);
+                }
+            }
+            foreach (var item in Karakterler)
+            {
+                if (item.activeInHierarchy)
+                {
+                    item.GetComponent<Animator>().SetBool("Saldir", false);
+                }
+            }
+            AnaKarakter.GetComponent<Animator>().SetBool("Saldir", false);
+
+            if (AnlikKarakterSayisi <= DusmanSayisi)
+            {
+                Debug.Log("Kaybettin");
+            }
+            else
+            {
+                Debug.Log("Kazandýn");
+            }
+        }
+    }
+
+    public void YokOlmaEfektiOlustur(Vector3 Pozisyon, bool KarakterDurum = false) // Buradaki karakterDurum deðiþkeni düþmandan mý azaltacaðýz yoksa altkarakterden mi azaltacaðýz ona karar veriyor --> false = altkarakter, true = dusman
+    {
+        foreach (var item in YokOlmaEfektleri)
         {
             if (!item.activeInHierarchy)
             {
                 item.SetActive(true);
                 item.transform.position = Pozisyon;
                 item.GetComponent<ParticleSystem>().Play();
-                AnlikKarakterSayisi--;
+                if (KarakterDurum == false)
+                {
+                    AnlikKarakterSayisi--;
+                }
+                else
+                {
+                    DusmanSayisi--;
+                }
                 break;
             }
+        }
+        
+        if(OyunBittiMi == false)
+        {
+            SavasDurumu();
         }
     }
 

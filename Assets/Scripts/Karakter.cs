@@ -46,7 +46,7 @@ public class Karakter : MonoBehaviour
             int sayi = int.Parse(other.name);
             _GameManager.AdamYonetimi(other.tag, sayi, other.transform);
         }
-        else if (other.CompareTag("SonTetikleyici"))
+        else if (other.CompareTag("SonTetikleyici")) // Oyun sonu için trigger koyduðum nokta
         {
             _Kamera.GetComponent<Kamera>().SonaGelindiMiKamera = true;
             _GameManager.DusmanlariTetikle();
