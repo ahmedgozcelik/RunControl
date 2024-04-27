@@ -19,7 +19,7 @@ public class Karakter : MonoBehaviour
 
     void Update()
     {
-        if(SonaGelindiMiKarakter == true)
+        if (SonaGelindiMiKarakter == true)
         {
             transform.position = Vector3.Lerp(transform.position, KarakterYeniPoz.transform.position, .015f);
         }
@@ -56,6 +56,22 @@ public class Karakter : MonoBehaviour
             _Kamera.SonaGelindiMiKamera = true;
             _GameManager.DusmanlariTetikle();
             SonaGelindiMiKarakter = true;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Direk") || collision.gameObject.CompareTag("IgneliKutu") || collision.gameObject.CompareTag("PervaneIgneler"))
+        {
+            //Karakterin direklere takýlma durumunun önüne geçmek için soldakine takýlmaya çalýþýrsa saða, saðdakilere takýlmaya çalýþýrsa sola atma iþlevi..
+            if (transform.position.x > 0)
+            {
+                transform.position = new Vector3(transform.position.x - .2f, transform.position.y, transform.position.z);
+            }
+            else
+            {
+                transform.position = new Vector3(transform.position.x + .2f, transform.position.y, transform.position.z);
+            }
         }
     }
 }

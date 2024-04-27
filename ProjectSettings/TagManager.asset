@@ -18,6 +18,7 @@ TagManager:
   - SonTetikleyici
   - Kapi
   - Karakter
+  - Direk
   layers:
   - Default
   - TransparentFX

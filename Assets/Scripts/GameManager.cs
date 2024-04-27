@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public GameObject AnaKarakter;
     public bool OyunBittiMi;
 
+    bool SonaGelindiMi;
+
     void Start()
     {
         DusmanlariOlustur();
@@ -67,6 +69,8 @@ public class GameManager : MonoBehaviour
     
     public void SavasDurumu()
     {
+        if(SonaGelindiMi == true)
+        {
         if(AnlikKarakterSayisi == 1 || DusmanSayisi == 0) //Karakter sayýmýzýn durumuna göre kaybetme veya düþman sayýsýna göre kazanma durumlarýný kontrol et
         {
             OyunBittiMi = true;
@@ -94,6 +98,7 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("Kazandýn");
             }
+        }
         }
     }
 
@@ -154,5 +159,6 @@ public class GameManager : MonoBehaviour
                 item.GetComponent<Dusman>().AnimasyonTetikle();
             }
         }
+        SonaGelindiMi = true;
     }
 }
