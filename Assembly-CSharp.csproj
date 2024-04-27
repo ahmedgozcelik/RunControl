@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Ruzgar.cs" />
     <Compile Include="Assets\Scripts\Pervane.cs" />
     <Compile Include="Assets\Scripts\Alt_Karakter.cs" />
+    <Compile Include="Assets\Scripts\Bos_Karakter.cs" />
     <Compile Include="Assets\Scripts\Karakter.cs" />
     <Compile Include="Assets\Scripts\Kamera.cs" />
   </ItemGroup>

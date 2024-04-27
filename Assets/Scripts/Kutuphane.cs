@@ -26,6 +26,7 @@ namespace Gurkan
                                 item2.SetActive(true);
                                 item2.transform.position = Pozisyon.position;
                                 item2.GetComponent<ParticleSystem>().Play();
+                                item2.GetComponent<AudioSource>().Play();
                                 break;
                             }
                         }
@@ -42,7 +43,6 @@ namespace Gurkan
                 }
             }
             GameManager.AnlikKarakterSayisi *= GelenSayi;
-            Debug.Log(GameManager.AnlikKarakterSayisi);
         }
 
         public static void Toplama(int GelenSayi, List<GameObject> Karakterler, Transform Pozisyon, List<GameObject> OlusmaEfektleri)
@@ -62,6 +62,7 @@ namespace Gurkan
                                 item2.SetActive(true);
                                 item2.transform.position = Pozisyon.position;
                                 item2.GetComponent<ParticleSystem>().Play();
+                                item2.GetComponent<AudioSource>().Play();
                                 break;
                             }
                         }
@@ -78,7 +79,6 @@ namespace Gurkan
                 }
             }
             GameManager.AnlikKarakterSayisi += GelenSayi;
-            Debug.Log(GameManager.AnlikKarakterSayisi);
         }
 
         public static void Cikarma(int GelenSayi, List<GameObject> Karakterler, List<GameObject> YokOlmaEfektleri)
@@ -95,6 +95,7 @@ namespace Gurkan
                             item2.SetActive(true);
                             item2.transform.position = yeniPoz;
                             item2.GetComponent<ParticleSystem>().Play();
+                            item2.GetComponent<AudioSource>().Play();
                             break;
                         }
                     }
@@ -121,6 +122,7 @@ namespace Gurkan
                                     item2.SetActive(true);
                                     item2.transform.position = yeniPoz;
                                     item2.GetComponent<ParticleSystem>().Play();
+                                    item2.GetComponent<AudioSource>().Play();
                                     break;
                                 }
                             }
@@ -154,6 +156,7 @@ namespace Gurkan
                             item2.SetActive(true);
                             item2.transform.position = yeniPoz;
                             item2.GetComponent<ParticleSystem>().Play();
+                            item2.GetComponent<AudioSource>().Play();
                             break;
                         }
                     }
@@ -182,6 +185,7 @@ namespace Gurkan
                                     item2.SetActive(true);
                                     item2.transform.position = yeniPoz;
                                     item2.GetComponent<ParticleSystem>().Play();
+                                    item2.GetComponent<AudioSource>().Play();
                                     break;
                                 }
                             }
@@ -212,8 +216,6 @@ namespace Gurkan
                     GameManager.AnlikKarakterSayisi /= GelenSayi;
                     GameManager.AnlikKarakterSayisi += 2;
                 }
-
-                Debug.Log(GameManager.AnlikKarakterSayisi);
             }
         }
     }

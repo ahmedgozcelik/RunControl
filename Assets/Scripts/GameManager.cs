@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Gurkan;
+using static UnityEditor.Progress;
 
 public class GameManager : MonoBehaviour
 {
@@ -66,39 +67,39 @@ public class GameManager : MonoBehaviour
     //    }
     //}
 
-    
+
     public void SavasDurumu()
     {
-        if(SonaGelindiMi == true)
+        if (SonaGelindiMi == true)
         {
-        if(AnlikKarakterSayisi == 1 || DusmanSayisi == 0) //Karakter sayýmýzýn durumuna göre kaybetme veya düþman sayýsýna göre kazanma durumlarýný kontrol et
-        {
-            OyunBittiMi = true;
-            foreach (var item in Dusmanlar)
+            if (AnlikKarakterSayisi == 1 || DusmanSayisi == 0) //Karakter sayýmýzýn durumuna göre kaybetme veya düþman sayýsýna göre kazanma durumlarýný kontrol et
             {
-                if (item.activeInHierarchy)
+                OyunBittiMi = true;
+                foreach (var item in Dusmanlar)
                 {
-                    item.GetComponent<Animator>().SetBool("Saldir", false);
+                    if (item.activeInHierarchy)
+                    {
+                        item.GetComponent<Animator>().SetBool("Saldir", false);
+                    }
                 }
-            }
-            foreach (var item in Karakterler)
-            {
-                if (item.activeInHierarchy)
+                foreach (var item in Karakterler)
                 {
-                    item.GetComponent<Animator>().SetBool("Saldir", false);
+                    if (item.activeInHierarchy)
+                    {
+                        item.GetComponent<Animator>().SetBool("Saldir", false);
+                    }
                 }
-            }
-            AnaKarakter.GetComponent<Animator>().SetBool("Saldir", false);
+                AnaKarakter.GetComponent<Animator>().SetBool("Saldir", false);
 
-            if (AnlikKarakterSayisi <= DusmanSayisi)
-            {
-                Debug.Log("Kaybettin");
+                if (AnlikKarakterSayisi <= DusmanSayisi)
+                {
+                    Debug.Log("Kaybettin");
+                }
+                else
+                {
+                    Debug.Log("Kazandýn");
+                }
             }
-            else
-            {
-                Debug.Log("Kazandýn");
-            }
-        }
         }
     }
 
@@ -111,6 +112,7 @@ public class GameManager : MonoBehaviour
                 item.SetActive(true);
                 item.transform.position = Pozisyon;
                 item.GetComponent<ParticleSystem>().Play();
+                item.GetComponent<AudioSource>().Play();
                 if (KarakterDurum == false)
                 {
                     AnlikKarakterSayisi--;
@@ -122,8 +124,8 @@ public class GameManager : MonoBehaviour
                 break;
             }
         }
-        
-        if(OyunBittiMi == false)
+
+        if (OyunBittiMi == false)
         {
             SavasDurumu();
         }

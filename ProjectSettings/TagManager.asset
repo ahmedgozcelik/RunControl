@@ -19,6 +19,7 @@ TagManager:
   - Kapi
   - Karakter
   - Direk
+  - BosKarakter
   layers:
   - Default
   - TransparentFX
