@@ -5,9 +5,9 @@ using UnityEngine;
 
 namespace Gurkan
 {
-    public class Matematiksel_Islemler : MonoBehaviour
+    public class Matematiksel_Islemler
     {
-        public static void Carpma(int GelenSayi, List<GameObject> Karakterler, Transform Pozisyon, List<GameObject> OlusmaEfektleri)
+        public void Carpma(int GelenSayi, List<GameObject> Karakterler, Transform Pozisyon, List<GameObject> OlusmaEfektleri)
         {
             int DonguSayisi = (GameManager.AnlikKarakterSayisi * GelenSayi) - GameManager.AnlikKarakterSayisi;
             //                              10                      3                           10             = 20
@@ -45,7 +45,7 @@ namespace Gurkan
             GameManager.AnlikKarakterSayisi *= GelenSayi;
         }
 
-        public static void Toplama(int GelenSayi, List<GameObject> Karakterler, Transform Pozisyon, List<GameObject> OlusmaEfektleri)
+        public void Toplama(int GelenSayi, List<GameObject> Karakterler, Transform Pozisyon, List<GameObject> OlusmaEfektleri)
         {
             int sayi2 = 0;
 
@@ -81,7 +81,7 @@ namespace Gurkan
             GameManager.AnlikKarakterSayisi += GelenSayi;
         }
 
-        public static void Cikarma(int GelenSayi, List<GameObject> Karakterler, List<GameObject> YokOlmaEfektleri)
+        public void Cikarma(int GelenSayi, List<GameObject> Karakterler, List<GameObject> YokOlmaEfektleri)
         {
             if (GameManager.AnlikKarakterSayisi < GelenSayi)
             {
@@ -142,7 +142,7 @@ namespace Gurkan
             }
         }
       
-        public static void Bolme(int GelenSayi, List<GameObject> Karakterler, List<GameObject> YokOlmaEfektleri)
+        public void Bolme(int GelenSayi, List<GameObject> Karakterler, List<GameObject> YokOlmaEfektleri)
         {
             if (GameManager.AnlikKarakterSayisi <= GelenSayi)
             {
@@ -217,6 +217,39 @@ namespace Gurkan
                     GameManager.AnlikKarakterSayisi += 2;
                 }
             }
+        }
+    }
+
+    public class BellekYonetim
+    {
+        public void VeriKaydet_String(string Key, string Value)
+        {
+            PlayerPrefs.SetString(Key, Value);
+            PlayerPrefs.Save();
+        }
+        public void VeriKaydet_Int(string Key, int Value)
+        {
+            PlayerPrefs.SetInt(Key, Value);
+            PlayerPrefs.Save();
+        }
+        public void VeriKaydet_Float(string Key, float Value)
+        {
+            PlayerPrefs.SetFloat(Key, Value);
+            PlayerPrefs.Save();
+        }
+
+
+        public string VeriOku_S(string Key)
+        {
+            return PlayerPrefs.GetString(Key);
+        }
+        public int VeriOku_I(string Key)
+        {
+            return PlayerPrefs.GetInt(Key);
+        }
+        public float VeriOku_F(string Key)
+        {
+            return PlayerPrefs.GetFloat(Key);
         }
     }
 }

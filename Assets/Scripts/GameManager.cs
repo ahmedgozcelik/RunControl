@@ -6,6 +6,8 @@ using static UnityEditor.Progress;
 
 public class GameManager : MonoBehaviour
 {
+    BellekYonetim _BellekYonetim = new BellekYonetim();
+
     public static int AnlikKarakterSayisi = 1;
 
     public List<GameObject> Karakterler;
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         DusmanlariOlustur();
+        Debug.Log(_BellekYonetim.VeriOku_I("Puan"));
     }
 
 
@@ -97,6 +100,14 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
+                    if (AnlikKarakterSayisi > 5)
+                    {
+                        _BellekYonetim.VeriKaydet_Int("Puan", _BellekYonetim.VeriOku_I("Puan") + 600);
+                    }
+                    else
+                    {
+                        _BellekYonetim.VeriKaydet_Int("Puan", _BellekYonetim.VeriOku_I("Puan") + 200);
+                    }
                     Debug.Log("Kazandýn");
                 }
             }

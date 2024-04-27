@@ -6,6 +6,8 @@ using TMPro;
 
 public class Kapi : MonoBehaviour
 {
+    Matematiksel_Islemler _MatematikseIslemler = new Matematiksel_Islemler();
+
     public GameManager _GameManager;
     public TextMeshProUGUI _KapiText;
     public GameObject _Karakter;
@@ -29,16 +31,16 @@ public class Kapi : MonoBehaviour
         switch (kapiTuru)
         {
             case KapiTuru.Toplama:
-                Matematiksel_Islemler.Toplama(_IslemDegeri, _GameManager.Karakterler, Pozisyon, _GameManager.OlusmaEfektleri);
+                _MatematikseIslemler.Toplama(_IslemDegeri, _GameManager.Karakterler, Pozisyon, _GameManager.OlusmaEfektleri);
                 break;
             case KapiTuru.Cikarma:
-                Matematiksel_Islemler.Cikarma(_IslemDegeri, _GameManager.Karakterler, _GameManager.YokOlmaEfektleri);
+                _MatematikseIslemler.Cikarma(_IslemDegeri, _GameManager.Karakterler, _GameManager.YokOlmaEfektleri);
                 break;
             case KapiTuru.Carpma:
-                Matematiksel_Islemler.Carpma(_IslemDegeri, _GameManager.Karakterler, Pozisyon, _GameManager.OlusmaEfektleri);
+                _MatematikseIslemler.Carpma(_IslemDegeri, _GameManager.Karakterler, Pozisyon, _GameManager.OlusmaEfektleri);
                 break;
             case KapiTuru.Bolme:
-                Matematiksel_Islemler.Bolme(_IslemDegeri, _GameManager.Karakterler, _GameManager.YokOlmaEfektleri);
+                _MatematikseIslemler.Bolme(_IslemDegeri, _GameManager.Karakterler, _GameManager.YokOlmaEfektleri);
                 break;
         }
     }
