@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: X5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -79,9 +79,9 @@ MonoBehaviour:
   m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 0.8207547, g: 0.6871052, b: 0.10453009, a: 1}
+    topLeft: {r: 0.81960785, g: 0.23137255, b: 0.105882354, a: 1}
     topRight: {r: 0.9528302, g: 0.8727182, b: 0.28315237, a: 1}
-    bottomLeft: {r: 1, g: 0.9199073, b: 0.33490568, a: 1}
+    bottomLeft: {r: 0.7372549, g: 0.34117648, b: 0, a: 1}
     bottomRight: {r: 1, g: 0.9321562, b: 0.19215685, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
@@ -92,12 +92,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
+  m_fontSize: 10
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 0.4
-  m_fontSizeMax: 50
+  m_fontSizeMax: 10
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: X5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -213,9 +213,9 @@ MonoBehaviour:
   m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 0.8207547, g: 0.6871052, b: 0.10453009, a: 1}
+    topLeft: {r: 0.81960785, g: 0.23323101, b: 0.105882324, a: 1}
     topRight: {r: 0.9528302, g: 0.8727182, b: 0.28315237, a: 1}
-    bottomLeft: {r: 1, g: 0.9199073, b: 0.33490568, a: 1}
+    bottomLeft: {r: 0.735849, g: 0.3430477, b: 0, a: 1}
     bottomRight: {r: 1, g: 0.9321562, b: 0.19215685, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
@@ -481,8 +481,8 @@ GameObject:
   - component: {fileID: 1450297716248833103}
   - component: {fileID: 4140626753701244396}
   m_Layer: 0
-  m_Name: direk (1)
-  m_TagString: Untagged
+  m_Name: Direk_1
+  m_TagString: Direk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -701,9 +701,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7892584359227381945}
   - component: {fileID: 8116176904339723164}
+  - component: {fileID: 5930932929746927044}
   m_Layer: 0
-  m_Name: direk
-  m_TagString: Untagged
+  m_Name: Direk
+  m_TagString: Direk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -746,6 +747,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.21379209, y: 1.2716974, z: 0.22272491}
   m_Center: {x: -0.0046402216, y: 0.6433987, z: 0.0052604675}
+--- !u!54 &5930932929746927044
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3036869969115211539}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4516549038331386760
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,8 +910,8 @@ GameObject:
   - component: {fileID: 3306116408501929382}
   - component: {fileID: 4008899627797114758}
   m_Layer: 0
-  m_Name: direk (2)
-  m_TagString: Untagged
+  m_Name: Direk_2
+  m_TagString: Direk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

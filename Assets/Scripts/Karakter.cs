@@ -57,6 +57,19 @@ public class Karakter : MonoBehaviour
                     transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x + 0.1f, transform.position.y, transform.position.z), 0.3f);
                 }
             }
+
+            else
+            {
+                if (Input.GetKey(KeyCode.A))
+                {
+                    transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x - 0.1f, transform.position.y, transform.position.z), 0.3f);
+                }
+                else if (Input.GetKey(KeyCode.D))
+                {
+                    transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x + 0.1f, transform.position.y, transform.position.z), 0.3f);
+                }
+
+            }
         }
     }
 
@@ -72,16 +85,16 @@ public class Karakter : MonoBehaviour
         //{
         //    kapi.KapiTuruBelirle(other.transform);
         //}
-        if (other.CompareTag("SonTetikleyici")) // Oyun sonu için trigger koyduðum nokta
+        if (other.CompareTag("SonTetikleyici")) // Oyun sonundaki savaþ alanýna geldiðimi anladýðým nokta
         {
             _Kamera.SonaGelindiMiKamera = true;
             _GameManager.DusmanlariTetikle();
             SonaGelindiMiKarakter = true;
         }
-        else if (other.CompareTag("BosKarakter")) 
-        {
-            _GameManager.Karakterler.Add(other.gameObject);
-        }
+        //else if (other.CompareTag("BosKarakter")) --> Bu kod çalýþmýyor nedenini anlamadým
+        //{
+        //    _GameManager.Karakterler.Add(other.gameObject);
+        //}
     }
 
     private void OnCollisionEnter(Collision collision)

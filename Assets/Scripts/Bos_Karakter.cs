@@ -33,6 +33,7 @@ public class Bos_Karakter : MonoBehaviour
                 MaterialDegistirVeAnimasyonTetikle();
                 TemasVarMi = true;
                 gameObject.GetComponent<AudioSource>().Play();
+                Debug.Log(GameManager.AnlikKarakterSayisi);
             }
         }
         else if (other.CompareTag("IgneliKutu"))
@@ -73,6 +74,7 @@ public class Bos_Karakter : MonoBehaviour
         _Animator.SetBool("Saldir", true);
 
         gameObject.tag = "AltKarakter";
+        _GameManager.Karakterler.Add(gameObject);
         GameManager.AnlikKarakterSayisi += 1;
         Debug.Log(GameManager.AnlikKarakterSayisi);
     }

@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
 
     bool SonaGelindiMi;
 
+    public GameObject _PanelKazandýn;
+    public GameObject _PanelKaybettin;
+
     void Start()
     {
         DusmanlariOlustur();
@@ -97,6 +100,7 @@ public class GameManager : MonoBehaviour
                 if (AnlikKarakterSayisi <= DusmanSayisi)
                 {
                     Debug.Log("Kaybettin");
+                    _PanelKaybettin.SetActive(true);
                 }
                 else
                 {
@@ -109,6 +113,7 @@ public class GameManager : MonoBehaviour
                         _BellekYonetim.VeriKaydet_Int("Puan", _BellekYonetim.VeriOku_I("Puan") + 200);
                     }
                     Debug.Log("Kazandýn");
+                    _PanelKazandýn.SetActive(true);
                 }
             }
         }

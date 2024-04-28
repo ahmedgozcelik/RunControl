@@ -49,10 +49,10 @@ public class Alt_Karakter : MonoBehaviour
             ObjeyiKapat();
             Debug.Log(GameManager.AnlikKarakterSayisi);
         }
-        else if (other.CompareTag("BosKarakter"))
-        {
-            _GameManager.Karakterler.Add(other.gameObject);
-        }
+        //else if (other.CompareTag("BosKarakter")) --> Bu kod çalýþmýyor nedenini anlamadým
+        //{
+        //    _GameManager.Karakterler.Add(other.gameObject);
+        //}
     }
 
     Vector3 YPozisyonVer(float yDegeri)
